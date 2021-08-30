@@ -1,0 +1,42 @@
+.home-wrapper {
+    margin-top: 8vh;
+}
+
+.welcome-message {
+    color: rgb(82, 172, 122);
+    margin-bottom: 2em;
+}
+
+.welcome-message h4 {
+    color: rgba(0, 0, 0, 0.734);
+    font-style: oblique;
+}
+
+.card-body {
+    background: rgba(82, 172, 123, 0.33);
+    box-shadow: 10px 10px 8px #888888;
+    border: 1px black solid;
+    border-radius: 15px;
+    margin-left: 1em;
+    margin-right: 1em;
+    margin-bottom: 2em;
+}
+
+.card-link {
+    text-decoration: none;
+    color: black;
+}
+
+.card-link:hover {
+    text-decoration: none;
+    color: white;
+}
+
+.btn {
+    background-color: rgb(82, 172, 122);
+}
+
+.btn:hover {
+    background-color: white;
+    color: black;
+}
