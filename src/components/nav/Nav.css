@@ -11,3 +11,14 @@
     font-size: x-large;
     font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
 }
+
+.input-group {
+    width: 25vw;
+} 
+
+@media only screen and (max-width: 1028px) {
+    .input-group {
+    width: 100%;
+    }
+  }
+

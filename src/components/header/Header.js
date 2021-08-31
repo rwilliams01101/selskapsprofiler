@@ -10,11 +10,14 @@ function Header(props) {
               {props.companyHeader}
             </h1>
             <div className="header-details">
-              <div>
-                Address: {props.publishDate}
+            <div>
+                {props.about} 
               </div>
               <div>
-                Telephone: {props.writtenBy}
+                {props.address[0]}
+              </div>
+              <div>
+                {props.postNum + " " + props.postCity + ", " + props.land}
               </div>
             </div>
           </div>

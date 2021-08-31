@@ -10,16 +10,18 @@ import Collapse from "../../utils/Collapse"
 import Home from '../../routes/Home'
 import About from '../../routes/About'
 import CompanyProfile from "../../routes/CompanyProfile"
+import SearchPage from "../../routes/SearchPage"
 import SearchResults from "../../routes/SearchResults"
 import Notes from "../../routes/Notes"
 
 function Nav () {
+
     return(
         <>
             <Router>
                 <nav className="navbar navbar-expand-lg navbar-light bg-light">
                     <div className="container-fluid">
-                        <Link className="navbar-brand" onClick={Collapse} to="/selskapsprofiler"><img src={navBrand} alt="navbar logo"></img></Link> 
+                        <Link className="navbar-brand" onClick={Collapse} to="/selskapsprofiler"><img src={navBrand} alt="appex logo"></img></Link> 
                         <button className="navbar-toggler" id="hamburger-toggle" type="button" data-bs-toggle="collapse" data-bs-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
                         <span className="navbar-toggler-icon"></span>
                         </button>
@@ -45,6 +47,9 @@ function Nav () {
                     </Route>
                     <Route path="/selskapsprofiler">
                         <Home />
+                    </Route>
+                    <Route path="/searchpage">
+                        <SearchPage />
                     </Route>
                     <Route path="/searchresults">
                         <SearchResults />

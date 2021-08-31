@@ -18,8 +18,8 @@ export const Company_Preview_Values = [
 
 export const Company_Note_Values = [
   // Notes for Preview 1
-  { src: `${firstImageOne}`, classes: "img img-lg-ctr", altText: "This person runs it all.", id: "1", companyNote: "This is where the notes will be posted.", previewValue: "1"},
-  { src: `${firstImageTwo}`, classes: "img img-lg-ctr", altText: "This is the web developer", id: "2", companyNote: "This is also where the notes will be posted.", previewValue: "1"},
+  { src: `${firstImageOne}`, classes: "img img-lg-ctr", altText: "This person runs it all.", id: "1", companyNote: "This is where the notes will be posted.", previewValue: "995412020"},
+  { src: `${firstImageTwo}`, classes: "img img-lg-ctr", altText: "This is the web developer", id: "2", companyNote: "This is also where the notes will be posted.", previewValue: "995412020"},
 
   // Notes for Preview 2
   { src: `${secondImageOne}`, classes: "img img-lg-ctr", altText: "Here is a building - neat.", id: "3", companyNote: "This is where the notes will be posted.", previewValue: "2"},

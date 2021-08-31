@@ -11,7 +11,7 @@ function Home(props) {
                     <h4>Hva vil du gjøre?</h4>
                 </div>
                     <div className="card-body">
-                        <a className="card-link" href="/searchresults">
+                        <a className="card-link" href="/searchpage">
                             <h5 className="card-title">Find Businesses</h5>
                             <p className="card-text">Search Brønnøysundregisteret to see the latest company information.</p>
                         </a>
