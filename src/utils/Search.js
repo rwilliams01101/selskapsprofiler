@@ -16,8 +16,6 @@ function Search() {
         const res = await fetch(url);
         const data = await res.json();
         setCompanies(data._embedded.enheter);
-        console.log("companies: ", companies.enheter)
-        console.log(data._embedded.enheter)
         } catch (err) {
             console.error(err);
         }

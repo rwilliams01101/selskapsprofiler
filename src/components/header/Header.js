@@ -17,7 +17,10 @@ function Header(props) {
                 {props.address[0]}
               </div>
               <div>
-                {props.postNum + " " + props.postCity + ", " + props.land}
+                {props.fullLocation}
+              </div>
+              <div>
+                {props.postNum}
               </div>
             </div>
           </div>
