@@ -6,7 +6,7 @@ import { Company_Note_Values } from '../../utils/AppConstants'
 function CompanyNote() {
 
      // I know this isn't good, but building an SPA on gitpages made me cheat a bit
-     const value = localStorage.getItem('CompanyNoteNumber');
+     const value = localStorage.getItem('CompanyIdNumber');
      const companyNotes = [];
  
      for(let i=0; i<Company_Note_Values.length; i++) {
@@ -19,7 +19,7 @@ function CompanyNote() {
          return (
              <>
                  <div style={{padding: 1 + "em"}}>
-                     <h1>We haven't finished this post yet (but we will soon).</h1>
+                     <h1>You haven't added any notes to this company yet.</h1>
                  </div>
              </>
          )

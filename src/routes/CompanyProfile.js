@@ -1,48 +1,66 @@
-import { useEffect } from 'react'
-import Image from '../components/image/Image'
-import Text from '../components/text/Text'
+import { useState, useEffect } from 'react'
 import Header from '../components/header/Header'
-import { Company_Note_Values } from '../utils/AppConstants'
-import { Company_Preview_Values } from '../utils/AppConstants'
 import './CompanyProfile.css'
+import CompanyNote from '../components/companyNote/CompanyNote'
 
 
 function CompanyProfile() {
 
-    useEffect(() => {
-        window.scrollTo(0, 0)
-      }, [])    
-    // I know this isn't good, but building an SPA on gitpages made me cheat a bit
-    const value = localStorage.getItem('CompanyNoteNumber');
-    const companyNotes = [];
+    const [companies, setCompanies] = useState([]);
+    const [city, setCity] = useState("");
 
-    for(let i=0; i<Company_Note_Values.length; i++) {
-        if(Company_Note_Values[i].previewValue === value) {
-            companyNotes.push(Company_Note_Values[i]);
+    const search = async () => {
+
+        const query = localStorage.getItem("CompanyIdNumber")
+        const url = `https://data.brreg.no/enhetsregisteret/api/enheter?organisasjonsnummer=${query}`
+
+        try {
+        const res = await fetch(url);
+        const data = await res.json();
+        setCompanies(data._embedded.enheter)
+        localStorage.setItem('CompanyCity', data._embedded.enheter[0].forretningsadresse.poststed.toString())
+        citySearch()
+        } catch (err) {
+            console.error(err);
         }
     }
 
-    if(companyNotes.length === 0 ) {
+    const citySearch = async () => {
+
+        const cityName = localStorage.getItem("CompanyCity")
+        const cityQuery = `${cityName},%20No`
+        const cityUrl = `https://api.teleport.org/api/cities/?search=${cityQuery}`
+
+        try {
+            const results = await fetch(cityUrl);
+            const cityData = await results.json();
+            setCity(cityData._embedded['city:search-results'][0].matching_full_name)
+        } catch (err) {
+            console.error(err);
+        }
+
+    }
+
+    useEffect(() => {
+        search()
+    }, [])
+
+    if(companies.length === 0) {
         return (
-            <>
-                <div style={{padding: 1 + "em"}}>
-                    <h1>We haven't finished this post yet (but we will soon).</h1>
-                </div>
-            </>
+            document.readyState
         )
     }
 
     return (
         
         <>
-        <Header companyHeader={Company_Preview_Values[value-1].altText} publishDate={Company_Preview_Values[value-1].publishDate} writtenBy={Company_Preview_Values[value-1].writtenBy}></Header>
-             {companyNotes.map((value, i) => (
-                <div key={companyNotes[i].id}>
-                    <Image src={companyNotes[i].src} classes="company-image" altText={companyNotes[i].altText}></Image>
-                    <Text classes="tight-caption" content={companyNotes[i].altText}></Text>
-                    <Text classes="company-detail" content={companyNotes[i].companyNote}></Text>
-                </div>
-            ))}
+            <Header fullLocation={city} 
+                    companyHeader={companies[0].navn} 
+                    address={companies[0].forretningsadresse.adresse} 
+                    about={companies[0].naeringskode1.beskrivelse} 
+                    postNum={companies[0].forretningsadresse.postnummer}>
+            </Header>
+           <CompanyNote></CompanyNote>
         </>
     )
   }
