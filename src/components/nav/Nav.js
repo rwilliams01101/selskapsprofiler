@@ -28,10 +28,10 @@ function Nav () {
                         <div className="collapse navbar-collapse" id="navbarText">
                         <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                             <li className="nav-item">
-                                <Link className="nav-link" onClick={Collapse} to="/selskapsprofiler">Home</Link>
+                                <Link className="nav-link" onClick={Collapse} to="/selskapsprofiler">Forside</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" onClick={Collapse} to="/about">About</Link>
+                                <Link className="nav-link" onClick={Collapse} to="/about">Om Oss</Link>
                             </li>
                         </ul>
                         </div>
