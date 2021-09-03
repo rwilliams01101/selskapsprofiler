@@ -13,6 +13,7 @@ import CompanyProfile from "../../routes/CompanyProfile"
 import SearchPage from "../../routes/SearchPage"
 import SearchResults from "../../routes/SearchResults"
 import Notes from "../../routes/Notes"
+import AllNotes from "../../routes/AllNotes"
 
 function Nav () {
 
@@ -56,6 +57,9 @@ function Nav () {
                     </Route>
                     <Route path="/notes">
                         <Notes />
+                    </Route>
+                    <Route path="/allnotes">
+                        <AllNotes />
                     </Route>
                 </Switch>
             </Router>

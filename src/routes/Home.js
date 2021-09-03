@@ -17,7 +17,7 @@ function Home(props) {
                         </a>
                     </div>
                     <div className="card-body">
-                        <a className="card-link" href="/notes">
+                        <a className="card-link" href="/allnotes">
                             <h5 className="card-title">Se Notater</h5>
                             <p className="card-text">Se og rediger notatene dine.</p>
                         </a>
