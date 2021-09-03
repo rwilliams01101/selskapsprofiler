@@ -1,0 +1,19 @@
+.form {
+    padding: 1em;
+}
+
+.input {
+    width: 85vw;
+    height: 35px;
+}
+
+.btn {
+    height: 35px;
+    margin-top: 10px;
+}
+
+@media screen and (min-width: 992px) {
+    .btn {
+        margin-left: 35px;
+    }
+}

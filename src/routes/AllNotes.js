@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import Text from '../components/text/Text'
 
-function Notes() {
+function AllNotes() {
 
     const value = localStorage.getItem('CompanyIdNumber');
     const companyNotes = [];
@@ -17,17 +17,14 @@ function Notes() {
             }
         }).then(jsonRes => setNotes(jsonRes));
     }, [])
-
-    console.log("notes obj", notes[0].company)
-    console.log("value ", value)
  
-     for(let i=0; i<notes.length; i++) {
-         if(notes[i].company === value) {
-             companyNotes.push(notes[i]);
-         }
-     }
+    //  for(let i=0; i<notes.length; i++) {
+    //      if(notes[i].company === value) {
+    //          companyNotes.push(notes[i]);
+    //      }
+    //  }
  
-     if(companyNotes.length === 0 ) {
+     if(notes.length === 0 ) {
          return (
              <>
                  <div style={{padding: 1 + "em"}}>
@@ -39,14 +36,15 @@ function Notes() {
 
     return(
         <>
-           {companyNotes.map((value, i) => (
-                 <div key={companyNotes[i]._id}>
-                     <Text classes="tight-caption" content={companyNotes[i].company}></Text>
-                     <Text classes="company-entry" content={companyNotes[i].note}></Text>
+           {notes.map((value, i) => (
+                 <div key={notes[i]._id}>
+                     <Text classes="tight-caption" content={notes[i].company}></Text>
+                     <Text classes="company-entry" content={notes[i].note}></Text>
                  </div>
              ))}
         </>
     )
+
 }
 
-export default Notes
+export default AllNotes

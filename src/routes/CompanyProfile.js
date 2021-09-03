@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react'
 import Header from '../components/header/Header'
 import './CompanyProfile.css'
-import CompanyNote from '../components/companyNote/CompanyNote'
+import NewNote from '../components/newNote/NewNote'
+import Notes from '../routes/Notes'
 
 
 function CompanyProfile() {
@@ -60,7 +61,8 @@ function CompanyProfile() {
                     about={companies[0].naeringskode1.beskrivelse} 
                     postNum={companies[0].forretningsadresse.postnummer}>
             </Header>
-           <CompanyNote></CompanyNote>
+            <NewNote companyId={companies[0].organisasjonsnummer}></NewNote>
+            <Notes></Notes>
         </>
     )
   }

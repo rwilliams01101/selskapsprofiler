@@ -27,6 +27,7 @@ function Search() {
                 <label className="label" htmlFor="query"></label>
                 <input className="input" type="text" name="query"
                     placeholder="Search by name"
+                    autoComplete="off"
                     value={query} onChange={(e) => setQuery(e.target.value)}
                     />
                 <button className="btn btn-success" type="submit">Search</button>
