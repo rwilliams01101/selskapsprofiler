@@ -11,3 +11,17 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+.preview-wrapper {
+  margin-top: 1.25em;
+}
+
+.read-more {
+    color: green;
+    text-decoration: none;
+}
+
+.read-more:hover {
+  color: black;
+  text-decoration: underline;
+}

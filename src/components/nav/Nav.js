@@ -10,8 +10,8 @@ import Collapse from "../../utils/Collapse"
 import Home from '../../routes/Home'
 import About from '../../routes/About'
 import CompanyProfile from "../../routes/CompanyProfile"
+import Search from "../../utils/Search"
 import SearchPage from "../../routes/SearchPage"
-import SearchResults from "../../routes/SearchResults"
 import Notes from "../../routes/Notes"
 import AllNotes from "../../routes/AllNotes"
 
@@ -53,7 +53,7 @@ function Nav () {
                         <SearchPage />
                     </Route>
                     <Route path="/searchresults">
-                        <SearchResults />
+                        <Search />
                     </Route>
                     <Route path="/notes">
                         <Notes />

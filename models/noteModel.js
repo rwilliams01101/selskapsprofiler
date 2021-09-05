@@ -1,3 +1,5 @@
+// sets the schema for Note
+
 const mongoose = require("mongoose")
 
 const notesSchema = {
