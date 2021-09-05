@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react'
-import Text from '../components/text/Text'
 
 function AllNotes() {
 
@@ -18,12 +17,6 @@ function AllNotes() {
         }).then(jsonRes => setNotes(jsonRes));
     }, [])
  
-    //  for(let i=0; i<notes.length; i++) {
-    //      if(notes[i].company === value) {
-    //          companyNotes.push(notes[i]);
-    //      }
-    //  }
- 
      if(notes.length === 0 ) {
          return (
              <>
@@ -37,9 +30,13 @@ function AllNotes() {
     return(
         <>
            {notes.map((value, i) => (
-                 <div key={notes[i]._id}>
-                     <Text classes="tight-caption" content={notes[i].company}></Text>
-                     <Text classes="company-entry" content={notes[i].note}></Text>
+                 <div key={i+1}>
+                     <div className="card-body">
+                        <h5 className="card-title">{notes[i].company}</h5>
+                        <p className="card-text">{notes[i].note}</p>
+                        <button className="btn btn-outline-danger">Delete</button>
+                        <button className="btn">Update</button>
+                    </div>
                  </div>
              ))}
         </>

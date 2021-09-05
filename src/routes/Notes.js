@@ -1,5 +1,6 @@
+import axios from 'axios';
 import React, { useState, useEffect } from 'react'
-import Text from '../components/text/Text'
+import './Notes.css'
 
 function Notes() {
 
@@ -10,6 +11,11 @@ function Notes() {
         note: ''
     }]);
 
+    function deleteNote(id) {
+        axios.delete('/delete/' + id);
+        console.log(`Deleted item with id ${id}`)
+    }
+
     useEffect(() => {
         fetch("/notes").then(res => {
             if(res.ok) {
@@ -17,9 +23,6 @@ function Notes() {
             }
         }).then(jsonRes => setNotes(jsonRes));
     }, [])
-
-    console.log("notes obj", notes[0].company)
-    console.log("value ", value)
  
      for(let i=0; i<notes.length; i++) {
          if(notes[i].company === value) {
@@ -40,10 +43,14 @@ function Notes() {
     return(
         <>
            {companyNotes.map((value, i) => (
-                 <div key={companyNotes[i]._id}>
-                     <Text classes="tight-caption" content={companyNotes[i].company}></Text>
-                     <Text classes="company-entry" content={companyNotes[i].note}></Text>
-                 </div>
+                 <div key={i+1}>
+                 <div className="card-body">
+                    <h5 className="card-title">{`Note # ${[i+1]}`}</h5>
+                    <p className="card-text">{companyNotes[i].note}</p>
+                    <button className="btn btn-outline-danger" onClick={() => deleteNote(companyNotes[i]._id)}>Delete</button>
+                    <button className="btn">Update</button>
+                </div>
+             </div>
              ))}
         </>
     )
