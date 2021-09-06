@@ -26,11 +26,11 @@ function Search() {
             <form className="form" onSubmit={search}>
                 <label className="label" htmlFor="query"></label>
                 <input className="input" type="text" name="query"
-                    placeholder="Search by name"
+                    placeholder="Søk etter navn"
                     autoComplete="off"
                     value={query} onChange={(e) => setQuery(e.target.value)}
                     />
-                <button className="btn btn-success" type="submit">Search</button>
+                <button className="btn btn-success" type="submit">Søk</button>
             </form>
             <div className="card-list">
                 {companies.map(company => (

@@ -3,3 +3,9 @@
     color: whitesmoke;
     background-color: rgb(156, 16, 16) !important;
 }
+
+.update-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}

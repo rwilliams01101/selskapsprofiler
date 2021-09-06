@@ -35,6 +35,7 @@ function Notes() {
     function updateItem(id) {
         axios.put('/put/' + id, updatedNote)
         console.log(`Item with id ${id} has been updated.`)
+        window.location.reload()
     }
 
     function handleUpdate(event) {
@@ -88,8 +89,8 @@ function Notes() {
                     <div className="card-body">
                         <h5 className="card-title">{`Note # ${[i+1]}`}</h5>
                         <p className="card-text">{companyNotes[i].note}</p>
-                        <button className="btn btn-outline-danger" onClick={() => deleteNote(companyNotes[i]._id)}>Delete</button>
-                        <button className="btn" onClick={() => openUpdate(companyNotes[i]._id)}>Edit</button>
+                        <button className="btn btn-outline-danger" onClick={() => deleteNote(companyNotes[i]._id)}>Slett</button>
+                        <button className="btn" onClick={() => openUpdate(companyNotes[i]._id)}>Redigere</button>
                     </div>
                 </div>
                 ))}
@@ -102,8 +103,8 @@ function Notes() {
                     <div key={i+1}>
                     <div className="card-body">
                         <h5 className="card-title">{`Note # ${[i+1]}`}</h5>
-                        <input onChange={handleUpdate} name="note" placeholder={companyNotes[i].note}></input>
-                        <button className="btn" onClick={() => updateItem(companyNotes[i]._id)}>Really Update</button>
+                        <input onChange={handleUpdate} name="note" placeholder={companyNotes[i].note} autoComplete="off"></input>
+                        <button className="btn update-button" onClick={() => updateItem(companyNotes[i]._id)}>Oppdater</button>
                     </div>
                 </div>
                 ))}

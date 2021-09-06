@@ -2,8 +2,6 @@ import React, { useState, useEffect } from 'react'
 
 function AllNotes() {
 
-    const value = localStorage.getItem('CompanyIdNumber');
-    const companyNotes = [];
     const [notes, setNotes] = useState([{
         company: '',
         note: ''
@@ -34,14 +32,11 @@ function AllNotes() {
                      <div className="card-body">
                         <h5 className="card-title">{notes[i].company}</h5>
                         <p className="card-text">{notes[i].note}</p>
-                        <button className="btn btn-outline-danger">Delete</button>
-                        <button className="btn">Update</button>
                     </div>
                  </div>
              ))}
         </>
     )
-
 }
 
 export default AllNotes

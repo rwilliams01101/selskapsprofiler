@@ -39,10 +39,10 @@ function NewNote (props) {
                     />
                 <textarea className="input" type="text" name="note"
                     autoComplete="off"
-                    placeholder="Enter a note"
+                    placeholder="Skriv inn et notat"
                     value={input.note} onChange={handleChange}
                     />
-                <button onClick={handleClick} className="btn btn-success" type="submit">Add Note</button>
+                <button onClick={handleClick} className="btn btn-success" type="submit">Legge Til</button>
             </form>
         </>
     )
