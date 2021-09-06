@@ -22,8 +22,4 @@ router.route("/notes").get((req, res) => {
         .then(foundNotes => res.json(foundNotes))
 })
 
-// update
-
-// delete
-
 module.exports = router;

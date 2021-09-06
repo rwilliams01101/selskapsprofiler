@@ -3,7 +3,9 @@
 const mongoose = require("mongoose")
 
 const notesSchema = {
+    // organisasjonsnummer
     company: String,
+    // note created by user
     note: String
 }
 
