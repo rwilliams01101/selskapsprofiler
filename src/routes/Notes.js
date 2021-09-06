@@ -73,7 +73,7 @@ function Notes() {
         return (
             <>
                 <div style={{padding: 1 + "em"}}>
-                    <h1>You haven't added any notes to this company yet.</h1>
+                    <h1>Det er ingen notater.</h1>
                 </div>
             </>
         )

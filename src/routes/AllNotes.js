@@ -19,7 +19,7 @@ function AllNotes() {
          return (
              <>
                  <div style={{padding: 1 + "em"}}>
-                     <h1>You haven't added any notes to this company yet.</h1>
+                     <h1>Det er ingen notater.</h1>
                  </div>
              </>
          )
@@ -27,10 +27,13 @@ function AllNotes() {
 
     return(
         <>
+        <h1>Se Alle Notater</h1>
+        <h6>Administrere på selskapsprofil</h6>
+        <br/>
            {notes.map((value, i) => (
                  <div key={i+1}>
                      <div className="card-body">
-                        <h5 className="card-title">{notes[i].company}</h5>
+                        <h5 className="card-title">Org #: {notes[i].company}</h5>
                         <p className="card-text">{notes[i].note}</p>
                     </div>
                  </div>
