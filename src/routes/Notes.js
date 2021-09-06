@@ -18,8 +18,6 @@ function Notes() {
         id: ''
     })
 
-    // TODO: 39:22 finish up
-
     function openUpdate(id) {
         setIsPut(true);
         setUpdatedNote(prevInput => {
@@ -81,11 +79,12 @@ function Notes() {
         )
     }
 
+    // if not being updated returns delete and update buttons
     if(!isPut) {
         return(
             <>
             {companyNotes.map((value, i) => (
-                    <div key={i+1}>
+                    <div key={companyNotes[i]._id}>
                     <div className="card-body">
                         <h5 className="card-title">{`Note # ${[i+1]}`}</h5>
                         <p className="card-text">{companyNotes[i].note}</p>
@@ -97,6 +96,7 @@ function Notes() {
             </>
         )
         } else {
+        // if it is being updated, returns update button
         return(
             <>
             {companyNotes.map((value, i) => (
