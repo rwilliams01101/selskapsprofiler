@@ -18,7 +18,20 @@ app.delete("/delete/:id", (req, res) => {
         if(!err) {
             console.log("Item Deleted")
         } else {
-            console.log("Error!!")
+            console.error(err)
+        }
+    })
+})
+
+app.put("/put/:id", (req, res) => {
+    const updatedNote = {
+        note: req.body.note
+    }
+    Note.findByIdAndUpdate({_id: req.params.id}, {$set: updatedNote}, (req, res, err) => {
+        if(!err) {
+            console.log("Item Updated")
+        } else {
+            console.error(err)
         }
     })
 })
