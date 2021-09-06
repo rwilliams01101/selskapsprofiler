@@ -5,7 +5,7 @@ function SearchPage () {
     
         return(
             <div className="container">
-                <h1 className="title">Company Search</h1>
+                <h1 className="title">Søk etter Company</h1>
                 <Search/>
             </div>
         )

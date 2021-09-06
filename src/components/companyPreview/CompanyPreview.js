@@ -11,7 +11,7 @@ function CompanyPreview(props) {
                 <div className="preview-wrapper">
                     <Text classes="tight-caption" content={props.name}></Text>
                     <Text classes="company-entry" content={props.address}></Text>
-                    <Link className="read-more" to={"/companyProfile"} value={props.orgNum} onClick={()=>StoreLocally(props.orgNum)}>View Company Profile</Link>
+                    <Link className="read-more" to={"/companyProfile"} value={props.orgNum} onClick={()=>StoreLocally(props.orgNum)}>Se Selskap</Link>
                 </div>
         </>
     )
