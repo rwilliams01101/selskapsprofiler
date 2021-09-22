@@ -1,4 +1,3 @@
-import axios from 'axios';
 import React, { useState, useEffect } from 'react'
 import './Notes.css'
 
@@ -31,8 +30,19 @@ function Notes() {
     }
 
     function updateItem(id) {
-        axios.put('/put/' + id, updatedNote)
-        console.log(`Item with id ${id} has been updated.`)
+        fetch('http://localhost:3001/put/' + id, {
+            method: "PUT",
+            
+            body: JSON.stringify({
+                ...updatedNote
+            }),
+            
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then(response => response.json())
+        
         window.location.reload()
     }
 
@@ -50,9 +60,14 @@ function Notes() {
     }
 
     function deleteNote(id) {
-        axios.delete('/delete/' + id);
+        fetch('http://localhost:3001/delete/' + id, {
+            method: "DELETE",
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then(response => response.json())
         window.location.reload();
-        console.log(`Deleted item with id ${id}`)
     }
 
     useEffect(() => {
