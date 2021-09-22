@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import './NewNote.css'
-import axios from 'axios'
 
 function NewNote (props) {
     const [input, setInput] = useState({
@@ -20,13 +19,23 @@ function NewNote (props) {
     }
 
     function handleClick(event) {
-        const newNote = {
-            company: input.company,
-            note: input.note
-        }
 
-        axios.post('http://localhost:3001/create', newNote)
-        console.log("New note posted to Mongo Database.")
+        fetch('http://localhost:3001/create', {
+            method: "POST",
+            
+            // Adding body or contents to send
+            body: JSON.stringify({
+                company: input.company,
+                note: input.note,
+            }),
+            
+            // Adding headers to the request
+            headers: {
+                "Content-type": "application/json; charset=UTF-8"
+            }
+        })
+        .then(response => response.json())
+        
     }
 
 
