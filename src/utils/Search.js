@@ -15,7 +15,6 @@ function Search() {
         try {
         const res = await fetch(url);
         const data = await res.json();
-        console.log("data:", data)
         setCompanies(data._embedded.enheter);
         } catch (err) {
             console.error("No Companies Match Search Criteria: ", err);
@@ -36,7 +35,7 @@ function Search() {
             </form>
             <div className="card-list" id="results-list">
                 {companies.map(company => (
-                     <CompanyPreview name={company.navn} address={company.forretningsadresse ? company.forretningsadresse.adresse[0] : "No Address Provided"} orgNum={company.organisasjonsnummer} key={company.organisasjonsnummer}></CompanyPreview>
+                     <CompanyPreview name={company.navn} address={company.forretningsadresse ? company.forretningsadresse.adresse[0] : "Ikke adresse"} orgNum={company.organisasjonsnummer} key={company.organisasjonsnummer}></CompanyPreview>
                 ))}
             </div>
         </>

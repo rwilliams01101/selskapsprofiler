@@ -18,7 +18,6 @@ function CompanyProfile() {
         try {
             const results = await fetch(cityUrl);
             const cityData = await results.json();
-            console.log("cityData", cityData)
             if(cityData._embedded['city:search-results'].length === 0) {
                 console.log("City not provided in brreg. Cannot query Teleport API for full location name.")
             } else {
