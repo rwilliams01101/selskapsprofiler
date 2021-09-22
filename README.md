@@ -11,7 +11,6 @@ With Selskapsprofiler you can search companies and maintain notes about each.
 **2. Clone repository to your system (HTTPS, SSH, or GitHub CLI)**
 
 **3. Navigate terminal to the main directory (ex: C:/Repositories/selskapsprofiler) and run:**
-<!-- Update when complete -->
 - #### `npm install`
 
 **4. In the same terminal, launch the server by running `node server.js`**

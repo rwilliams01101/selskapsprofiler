@@ -1,10 +1,12 @@
 const express = require("express")
 const app = express();
+const cors = require("cors")
 const mongoose = require("mongoose");
 const Note = require("./models/noteModel");
 
 mongoose.connect("mongodb+srv://rwilliams01101:codechallenge@selskapsprofiler.6vmcv.mongodb.net/Selskapsprofiler?retryWrites=true&w=majority")
 
+app.use(cors())
 app.use(express.json())
 
 // create
