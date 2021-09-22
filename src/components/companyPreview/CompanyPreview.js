@@ -24,9 +24,9 @@ function CompanyPreview(props) {
 }
 
 CompanyPreview.defaultProps = {
-    name:"No Name Provided",
-    address:"No Address Provided",
-    orgNum:"No Organisation Number Provided",
+    name:"Ikke Navn",
+    address:"Ikke Adresse",
+    orgNum:"Ikke orgNum",
 }
 
 export default CompanyPreview
