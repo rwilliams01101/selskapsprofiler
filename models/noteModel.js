@@ -2,6 +2,7 @@
 
 const mongoose = require("mongoose")
 
+// defines the structure of document
 const notesSchema = {
     // organisasjonsnummer
     company: String,
@@ -9,6 +10,7 @@ const notesSchema = {
     note: String
 }
 
+// provides interface for db
 const Note = mongoose.model("Note", notesSchema)
 
 module.exports = Note;

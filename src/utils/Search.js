@@ -15,9 +15,11 @@ function Search() {
         try {
         const res = await fetch(url);
         const data = await res.json();
+        console.log("data:", data)
         setCompanies(data._embedded.enheter);
         } catch (err) {
-            console.error(err);
+            console.error("No Companies Match Search Criteria: ", err);
+            alert("Ingen resultater. Prøv et nytt søk.")
         }
     }
 
@@ -32,9 +34,9 @@ function Search() {
                     />
                 <button className="btn btn-success" type="submit">Søk</button>
             </form>
-            <div className="card-list">
+            <div className="card-list" id="results-list">
                 {companies.map(company => (
-                    <CompanyPreview name={company.navn} address={company.forretningsadresse.adresse[0]} orgNum={company.organisasjonsnummer} key={company.organisasjonsnummer}></CompanyPreview>
+                     <CompanyPreview name={company.navn} address={company.forretningsadresse ? company.forretningsadresse.adresse[0] : "No Address Provided"} orgNum={company.organisasjonsnummer} key={company.organisasjonsnummer}></CompanyPreview>
                 ))}
             </div>
         </>
