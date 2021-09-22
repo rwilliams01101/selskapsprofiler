@@ -7,13 +7,13 @@ import {
 import '../nav/Nav.css'
 import navBrand from '../../assets/images/asterisk.png'
 import Collapse from "../../utils/Collapse"
-import Home from '../../routes/Home'
-import About from '../../routes/About'
-import CompanyProfile from "../../routes/CompanyProfile"
+import Home from '../../views/Home'
+import About from '../../views/About'
+import CompanyProfile from "../../views/CompanyProfile"
 import Search from "../../utils/Search"
-import SearchPage from "../../routes/SearchPage"
-import Notes from "../../routes/Notes"
-import AllNotes from "../../routes/AllNotes"
+import SearchPage from "../../views/SearchPage"
+import Notes from "../../views/Notes"
+import AllNotes from "../../views/AllNotes"
 
 function Nav () {
 

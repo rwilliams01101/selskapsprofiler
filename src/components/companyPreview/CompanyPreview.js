@@ -21,6 +21,12 @@ function CompanyPreview(props) {
                 </div>
         </>
     )
-  }
+}
+
+CompanyPreview.defaultProps = {
+    name:"No Name Provided",
+    address:"No Address Provided",
+    orgNum:"No Organisation Number Provided",
+}
 
 export default CompanyPreview

@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import Header from '../components/header/Header'
 import './CompanyProfile.css'
 import NewNote from '../components/newNote/NewNote'
-import Notes from '../routes/Notes'
+import Notes from '../views/Notes'
 
 
 function CompanyProfile() {
