@@ -59,10 +59,10 @@ function CompanyProfile() {
         
         <>
             <Header fullLocation={city} 
-                    companyHeader={companies[0].navn} 
-                    address={companies[0].forretningsadresse.adresse} 
-                    about={companies[0].naeringskode1.beskrivelse} 
-                    postNum={companies[0].forretningsadresse.postnummer}>
+                    companyHeader={companies[0].navn}
+                    address={companies[0].forretningsadresse ? companies[0].forretningsadresse.adresse : ""}
+                    about={companies[0].naeringskode1 ? companies[0].naeringskode1.beskrivelse : "Ikke Beskrivelse" } 
+                    postNum={companies[0].forretningsadresse ? companies[0].forretningsadresse.postnummer : "Ikke Adresse"}>
             </Header>
             <NewNote companyId={companies[0].organisasjonsnummer}></NewNote>
             <Notes></Notes>
